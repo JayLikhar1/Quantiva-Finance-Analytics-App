@@ -10,8 +10,8 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://quantiva-app.web.app',
-  'https://quantiva-app.firebaseapp.com',
+  'https://quantiva-c0663.web.app',
+  'https://quantiva-c0663.firebaseapp.com',
   ...(process.env.CLIENT_URL ? [process.env.CLIENT_URL] : []),
 ];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
