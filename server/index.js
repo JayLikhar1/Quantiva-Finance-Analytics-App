@@ -8,7 +8,13 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://quantiva-app.web.app',
+  'https://quantiva-app.firebaseapp.com',
+  ...(process.env.CLIENT_URL ? [process.env.CLIENT_URL] : []),
+];
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 
 // Routes
